@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #
 # A fatal error has been detected by the Java Runtime Environment:
 #
@@ -81,4 +82,89 @@ C  [gdx-bullet64.dll+0x6e55b]
 C  [gdx-bullet64.dll+0x6e71e]
 C  [gdx-bullet64.dll+0x6ed2d]
 C  [gdx-bullet64.dll+0x6edc1]
+=======
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000067d28ec8, pid=12980, tid=0x00000000000049ac
+#
+# JRE version: OpenJDK Runtime Environment (8.0_202-b03) (build 1.8.0_202-release-1483-b03)
+# Java VM: OpenJDK 64-Bit Server VM (25.202-b03 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [gdx-bullet64.dll+0x68ec8]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000001f851000):  JavaThread "LWJGL Application" [_thread_in_native, id=18860, stack(0x00000000208f0000,0x00000000209f0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x000000001fd61000
+
+Registers:
+RAX=0x000000001fd60ffc, RBX=0x00000000209ef110, RCX=0x00000000215f3040, RDX=0x0000000000000020
+RSP=0x00000000209eef00, RBP=0x0000000067d27e50, RSI=0x0000000000000000, RDI=0x000000001fd429f0
+R8 =0x00000000215f3040, R9 =0x0000000000003969, R10=0x0000000067f7ab00, R11=0x00000000209eefd4
+R12=0x00000000209eefa8, R13=0x00000000209eefbc, R14=0x00000000209eefb0, R15=0x000000000000396a
+RIP=0x0000000067d28ec8, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x00000000209eef00)
+0x00000000209eef00:   0000000000000004 ffffffffffffffff
+0x00000000209eef10:   00000030ffffffff 000000006060ae38
+0x00000000209eef20:   00000000209eefb4 00000000209eefc8
+0x00000000209eef30:   00000000209eefa8 00000000209eefbc
+0x00000000209eef40:   00000000209eefb0 0000000000000000
+0x00000000209eef50:   00000000209ef0a0 3f8000002e00002e
+0x00000000209eef60:   000000013f800000 00000000209eefac
+0x00000000209eef70:   00000000209eefb4 00000000209eefb8
+0x00000000209eef80:   00000000209eefc0 00000000209eefc8
+0x00000000209eef90:   000000003f800000 00000000209eefd0
+0x00000000209eefa0:   00000000209ef279 0000000000000006
+0x00000000209eefb0:   0000002000000003 0000d5f8000281e8
+0x00000000209eefc0:   00000000215f3040 000000001fd4b780
+0x00000000209eefd0:   3ef00000c1000000 00000000c0f00000
+0x00000000209eefe0:   3ef00000c1000000 00000000c0f00000
+0x00000000209eeff0:   3effb118c0ffaaac 00000000c0f7aaaa 
+
+Instructions: (pc=0x0000000067d28ec8)
+0x0000000067d28ea8:   00 f3 0f 59 d6 f3 0f 11 84 24 e8 00 00 00 f3 0f
+0x0000000067d28eb8:   11 8c 24 e4 00 00 00 f3 0f 11 94 24 e0 00 00 00
+0x0000000067d28ec8:   0f b7 40 04 0f af d0 48 63 d2 49 8d 04 10 f3 0f
+0x0000000067d28ed8:   59 78 08 f3 44 0f 10 08 f3 44 0f 59 40 04 48 8b 
+
+
+Register to memory mapping:
+
+RAX=0x000000001fd60ffc is an unknown value
+RBX=0x00000000209ef110 is pointing into the stack for thread: 0x000000001f851000
+RCX=0x00000000215f3040 is an unknown value
+RDX=0x0000000000000020 is an unknown value
+RSP=0x00000000209eef00 is pointing into the stack for thread: 0x000000001f851000
+RBP=0x0000000067d27e50 is an unknown value
+RSI=0x0000000000000000 is an unknown value
+RDI=0x000000001fd429f0 is an unknown value
+R8 =0x00000000215f3040 is an unknown value
+R9 =0x0000000000003969 is an unknown value
+R10=0x0000000067f7ab00 is an unknown value
+R11=0x00000000209eefd4 is pointing into the stack for thread: 0x000000001f851000
+R12=0x00000000209eefa8 is pointing into the stack for thread: 0x000000001f851000
+R13=0x00000000209eefbc is pointing into the stack for thread: 0x000000001f851000
+R14=0x00000000209eefb0 is pointing into the stack for thread: 0x000000001f851000
+R15=0x000000000000396a is an unknown value
+
+
+Stack: [0x00000000208f0000,0x00000000209f0000],  sp=0x00000000209eef00,  free space=1019k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [gdx-bullet64.dll+0x68ec8]
+C  [gdx-bullet64.dll+0x6e55b]
+C  [gdx-bullet64.dll+0x6e71e]
+C  [gdx-bullet64.dll+0x6ed2d]
+C  [gdx-bullet64.dll+0x6edc1]
+>>>>>>> Stashed changes
 C
