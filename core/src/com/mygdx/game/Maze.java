@@ -79,7 +79,7 @@ public class Maze extends InputAdapter implements ApplicationListener {
 
 		Vector3 vec = new Vector3();
 		instances.getInstances().get(0).transform.getTranslation(vec);
-		if(Math.abs(vec.x)<1 || Math.abs(vec.z)<1) {
+		if(Math.abs(vec.x)<0.1f || Math.abs(vec.z)<0.1f) {
 			flag=true;
 		}
 		if(flag){
