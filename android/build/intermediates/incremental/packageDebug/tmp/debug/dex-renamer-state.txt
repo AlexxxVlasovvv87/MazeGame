@@ -1,4 +1,4 @@
-#Tue Dec 31 16:33:19 MSK 2019
-base.0=C\:\\LibGDX\\Labirint\\android\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Sat Jan 11 18:59:19 MSK 2020
+base.0=C\:\\GitHub\\MazeGame\\android\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

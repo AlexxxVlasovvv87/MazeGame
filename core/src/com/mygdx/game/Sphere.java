@@ -26,7 +26,7 @@ public class Sphere {
         instance.putConstructors("sphere", new GameObject.Constructor(model,"sphere", new btSphereShape(0.25f), 20));
         instance = new Instances();
         sphere = instance.getConstructors().get("sphere").construct();
-        sphere.transform.trn(0f,1.5f,0f);
+        sphere.transform.trn(7f,1.5f,7f);
         sphere.body.proceedToTransform(sphere.transform);
         instance.addInstances(sphere);
     }

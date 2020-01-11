@@ -31,7 +31,7 @@ public class DynamicWorld {
         constraintSolver = new btSequentialImpulseConstraintSolver();
         dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, broadphase, constraintSolver, collisionConfig);
 
-        dynamicsWorld.setGravity(new Vector3(0, -20f, 0));
+        dynamicsWorld.setGravity(new Vector3(0, -50f, 0));
         dynamicsWorld.addRigidBody(instances.getInstances().get(0).body, GROUND_FLAG, ALL_FLAG);
 
         GameObject object = instances.getInstances().get(1);

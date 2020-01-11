@@ -23,9 +23,7 @@ public class BackGround {
     public boolean isLoading() {
         return loading;
     }
-    public ModelInstance getSpace() {
-        return space;
-    }
+    public ModelInstance getSpace() { return space; }
     public AssetManager getAssetManager() {
         return assetManager;
     }
