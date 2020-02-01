@@ -31,8 +31,11 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Gradle: box2dlights-1.4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: gdx-box2d-1.9.10" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: gdx-controllers-1.9.10" level="project" />
     <orderEntry type="library" exported="" name="Gradle: gdx-bullet-1.9.10" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: gdx-freetype-1.9.10" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: gdx-ai-1.8.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: gdx-controllers-1.9.10" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: ashley-1.7.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: gdx-1.9.10" level="project" />
   </component>
 </module>
