@@ -4,18 +4,20 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL30;
+import com.mygdx.game.Screen.MainMenuScreen;
 
 public class Maze extends ApplicationAdapter {
-	public static final float VIRTUAL_WIDTH = 960;
-	public static final float VIRTUAL_HEIGHT = 540;
+	public static final float VIRTUAL_WIDTH = 540;
+	public static final float VIRTUAL_HEIGHT = 960;
 	Screen screen;
 
 
 	@Override
 	public void create() {
-		Gdx.input.setCatchBackKey(true);
-		setScreen(new GameScreen(this));
-		}
+		new Assets();
+		//Gdx.input.setCatchBackKey(true);
+		setScreen(new MainMenuScreen(this));
+	}
 
 	@Override
 	public void render() {
@@ -38,9 +40,12 @@ public class Maze extends ApplicationAdapter {
 		this.screen = screen;
 		if (this.screen != null) {
 			this.screen.show();
-			this.screen.resize(Gdx.graphics.getWidth(),
-					Gdx.graphics.getHeight());
+			this.screen.resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		}
 	}
 
+	@Override
+	public void dispose() {
+		Assets.dispose();
+	}
 }

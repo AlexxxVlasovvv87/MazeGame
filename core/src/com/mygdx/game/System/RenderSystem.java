@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.g3d.ModelBatch;
 import com.mygdx.game.Component.ModelComponent;
 
 public class RenderSystem extends EntitySystem {
-    private ImmutableArray<Entity> entities;//immutable списк неизменяемых объектов. При использованиии многпоточности можно быть уверенным, что другой поток не зимент поля нашего объекта
+    private ImmutableArray<Entity> entities;//Immutable - list of constants objects
     private ModelBatch batch;
     private Environment environment;
 
@@ -19,7 +19,6 @@ public class RenderSystem extends EntitySystem {
         this.environment = environment;
     }
 
-    // Event called when an entity is added to the engine
     public void addedToEngine(Engine e) {
         // Grabs all entities with desired components
         entities = e.getEntitiesFor(Family.all(ModelComponent.class).get());

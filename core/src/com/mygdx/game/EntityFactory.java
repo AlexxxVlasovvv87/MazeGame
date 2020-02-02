@@ -2,15 +2,11 @@ package com.mygdx.game;
 
 
 import com.badlogic.ashley.core.Entity;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.VertexAttributes;
 import com.badlogic.gdx.graphics.g3d.Material;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
-import com.badlogic.gdx.graphics.g3d.attributes.FloatAttribute;
-import com.badlogic.gdx.graphics.g3d.attributes.TextureAttribute;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.math.collision.BoundingBox;
@@ -30,15 +26,11 @@ import com.mygdx.game.System.BulletSystem;
 
 public class EntityFactory {
     private static Model playerModel;
-    private static Texture playerTexture;
     private static ModelBuilder modelBuilder;
-    private static MotionState motionState;
-    //private static Matrix4 position;
+    private static Vector3 directionWalk;
 
     static {
         modelBuilder = new ModelBuilder();
-        playerTexture = new Texture(Gdx.files.internal("space.jpg"));
-        Material material = new Material(TextureAttribute.createDiffuse(playerTexture), ColorAttribute.createSpecular(1, 1, 1, 1), FloatAttribute.createShininess(8f));
         playerModel = modelBuilder.createSphere(0.5f, 0.5f, 0.5f, 20, 20, new Material(ColorAttribute.createDiffuse(Color.BROWN)),
                 VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal);
     }
@@ -72,16 +64,24 @@ public class EntityFactory {
         characterComponent.ghostObject.setCollisionShape(characterComponent.ghostShape);
         characterComponent.ghostObject.setCollisionFlags(btCollisionObject.CollisionFlags.CF_CHARACTER_OBJECT);
         characterComponent.characterController = new btKinematicCharacterController(characterComponent.ghostObject, characterComponent.ghostShape, .35f);
-
-        characterComponent.characterController.setFallSpeed(0);
-
+        directionWalk = new Vector3(0,-1000,0);
+        characterComponent.characterController.setGravity(directionWalk);
+        characterComponent.characterController.setMaxJumpHeight(0);
+        characterComponent.characterController.setMaxSlope(0);
+        characterComponent.characterController.setFallSpeed(1000);
         characterComponent.ghostObject.userData = entity;
         entity.add(characterComponent);
         bulletSystem.collisionWorld.addCollisionObject(entity.getComponent(CharacterComponent.class).ghostObject,
                 (short) btBroadphaseProxy.CollisionFilterGroups.CharacterFilter,
                 (short) (btBroadphaseProxy.CollisionFilterGroups.AllFilter));
-
         bulletSystem.collisionWorld.addCharacter(entity.getComponent(CharacterComponent.class).characterController);
+        return entity;
+    }
+
+    public static Entity createBackGround(Model model, float x, float y, float z){
+        Entity entity = new Entity();
+        ModelComponent modelComponent = new ModelComponent(model,x,y,z);
+        entity.add(modelComponent);
         return entity;
     }
 
@@ -94,6 +94,5 @@ public class EntityFactory {
 
     public static void dispose() {
         playerModel.dispose();
-        playerTexture.dispose();
     }
 }

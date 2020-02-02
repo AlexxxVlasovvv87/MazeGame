@@ -16,6 +16,7 @@ import com.badlogic.gdx.physics.bullet.Bullet;
 import com.badlogic.gdx.physics.bullet.DebugDrawer;
 import com.badlogic.gdx.physics.bullet.linearmath.btIDebugDraw;
 import com.mygdx.game.Component.CharacterComponent;
+import com.mygdx.game.Screen.WinScreen;
 import com.mygdx.game.System.BulletSystem;
 
 import com.mygdx.game.System.PlayerSystem;
@@ -29,12 +30,13 @@ public class GameWorld {
     private Environment environment;
     private PerspectiveCamera perspectiveCamera;
     private ModelLoader loader = new ObjLoader();
-
     private Engine engine;
     private Entity character;
     public BulletSystem bulletSystem;
 
-    Model model = loader.loadModel(Gdx.files.internal("lab8.obj"));
+    Model maze = loader.loadModel(Gdx.files.internal("Maze.obj"));
+    Model modelBackGround = loader.loadModel(Gdx.files.internal("SphereBackGround.obj"));
+
     private void setDebug(){
         if(debug){
             debugDrawer = new DebugDrawer();
@@ -42,12 +44,12 @@ public class GameWorld {
         }
     }
 
-    public GameWorld() {
+    public GameWorld(WinScreen winScreen) {
         Bullet.init();
         initEnvironment();
         initModelBatch();
         initPersCamera();
-        addSystems();
+        addSystems(winScreen);
         addEntities();
         setDebug();
     }
@@ -75,7 +77,12 @@ public class GameWorld {
 
     private void addEntities() {
         createGround();
-        createPlayer(5f, 4f, 5.5f);
+        createPlayer(6.75f, 1.3f, 6.75f);
+        //createPlayer(-6.75f, 1.3f, 6.75f);
+        //createPlayer(6.75f, 1.3f, -6.75f);
+        //createPlayer(-6.75f, 1.3f, -6.75f);
+        createBackGround();
+
     }
 
     private void createPlayer(float x, float y, float z) {
@@ -84,23 +91,27 @@ public class GameWorld {
     }
 
     private void createGround() {
-        engine.addEntity(EntityFactory.createStaticEntity(model,0,0,0));
+        engine.addEntity(EntityFactory.createStaticEntity(maze,0,0,0));
     }
 
-    private void addSystems() {
+    private void createBackGround(){
+        engine.addEntity(EntityFactory.createBackGround(modelBackGround,0,0,0));
+    }
+
+    private void addSystems(WinScreen winScreen) {
         engine = new Engine();
         engine.addSystem(new RenderSystem(modelBatch, environment));
         engine.addSystem(bulletSystem = new BulletSystem());
-        engine.addSystem(new PlayerSystem(this, perspectiveCamera));
+        engine.addSystem(new PlayerSystem(this, perspectiveCamera, winScreen));
     }
 
     public void render(float delta) {
         renderWorld(delta);
 
         bulletSystem.collisionWorld.setDebugDrawer(debugDrawer);
-        debugDrawer.begin(perspectiveCamera);
-        bulletSystem.collisionWorld.debugDrawWorld();
-        debugDrawer.end();
+        //debugDrawer.begin(perspectiveCamera);
+        //bulletSystem.collisionWorld.debugDrawWorld();
+        //debugDrawer.end();
     }
 
 
