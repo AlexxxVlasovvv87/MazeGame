@@ -31,7 +31,7 @@ public class EntityFactory {
 
     static {
         modelBuilder = new ModelBuilder();
-        playerModel = modelBuilder.createSphere(0.5f, 0.5f, 0.5f, 20, 20, new Material(ColorAttribute.createDiffuse(Color.BROWN)),
+        playerModel = modelBuilder.createSphere(0.5f, 0.5f, 0.5f, 20, 20, new Material(ColorAttribute.createDiffuse(0.364f,0.11f,0.416f,1f)),
                 VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal);
     }
 
@@ -60,7 +60,7 @@ public class EntityFactory {
         CharacterComponent characterComponent = new CharacterComponent();
         characterComponent.ghostObject = new btPairCachingGhostObject();
         characterComponent.ghostObject.setWorldTransform(modelComponent.instance.transform);
-        characterComponent.ghostShape = new btSphereShape(0.25f);
+        characterComponent.ghostShape = new btSphereShape(0.35f);
         characterComponent.ghostObject.setCollisionShape(characterComponent.ghostShape);
         characterComponent.ghostObject.setCollisionFlags(btCollisionObject.CollisionFlags.CF_CHARACTER_OBJECT);
         characterComponent.characterController = new btKinematicCharacterController(characterComponent.ghostObject, characterComponent.ghostShape, .35f);
@@ -90,7 +90,6 @@ public class EntityFactory {
         entity.add(new PlayerComponent());
         return entity;
     }
-
 
     public static void dispose() {
         playerModel.dispose();

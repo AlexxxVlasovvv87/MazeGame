@@ -1,34 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\GitHub\\MazeGame\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\leone\\Creator_com\\MazeGame\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\GitHub\\MazeGame\\android\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "56",
-                        "endColumns": "48",
-                        "endOffsets": "100"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "111",
-                        "endColumns": "48",
-                        "endOffsets": "155"
-                    }
-                },
-                {
-                    "source": "C:\\GitHub\\MazeGame\\android\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\leone\\Creator_com\\MazeGame\\android\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "17",
+                        "startOffsets": "19",
                         "endLines": "9",
                         "endColumns": "12",
-                        "endOffsets": "475"
+                        "endOffsets": "484"
                     },
                     "to": {
                         "startLines": "4",
@@ -40,8 +23,32 @@
                     }
                 },
                 {
-                    "source": "C:\\GitHub\\MazeGame\\android\\res\\values\\color.xml",
+                    "source": "C:\\Users\\leone\\Creator_com\\MazeGame\\android\\res\\values\\strings.xml",
                     "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "59",
+                        "endColumns": "48",
+                        "endOffsets": "103"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "111",
+                        "endColumns": "48",
+                        "endOffsets": "155"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\leone\\Creator_com\\MazeGame\\android\\res\\values\\color.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "55",
+                        "endOffsets": "108"
+                    },
+                    "to": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",

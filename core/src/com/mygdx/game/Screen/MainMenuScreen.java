@@ -16,7 +16,7 @@ public class MainMenuScreen implements Screen {
     Maze game;
     Stage stage;
     Image backgroundImage;
-    TextButton playButton;
+    Image playButton;
 
     public MainMenuScreen(Maze game){
         this.game = game;
@@ -27,14 +27,14 @@ public class MainMenuScreen implements Screen {
         Gdx.input.setInputProcessor(stage);
     }
     private void setWidgets() {
-        backgroundImage = new Image(new Texture(Gdx.files.internal("backgroundMN.png")));
-        playButton = new TextButton("Play", Assets.skin);
+        backgroundImage = new Image(new Texture(Gdx.files.internal("2.png")));
+        playButton = new Image(new Texture(Gdx.files.internal("ButtonStartff.png")));
     }
 
     private void configureWidgets(){
         backgroundImage.setSize(Maze.VIRTUAL_WIDTH, Maze.VIRTUAL_HEIGHT);
-        playButton.setSize(128, 64);
-        playButton.setPosition(Maze.VIRTUAL_WIDTH / 2 - playButton.getWidth() / 2, Maze.VIRTUAL_HEIGHT / 2 - 100);
+        playButton.setSize(400, 400);
+        playButton.setPosition(Maze.VIRTUAL_WIDTH / 2 - playButton.getWidth() / 2, Maze.VIRTUAL_HEIGHT / 2 - 150);
         stage.addActor(backgroundImage);
         stage.addActor(playButton);
     }

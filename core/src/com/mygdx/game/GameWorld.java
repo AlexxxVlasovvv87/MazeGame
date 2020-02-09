@@ -18,6 +18,7 @@ import com.badlogic.gdx.physics.bullet.linearmath.btIDebugDraw;
 import com.mygdx.game.Component.CharacterComponent;
 import com.mygdx.game.Screen.WinScreen;
 import com.mygdx.game.System.BulletSystem;
+// import com.badlogic.gdx.graphics.OrthographicCamera;
 
 import com.mygdx.game.System.PlayerSystem;
 import com.mygdx.game.System.RenderSystem;
@@ -33,8 +34,10 @@ public class GameWorld {
     private Engine engine;
     private Entity character;
     public BulletSystem bulletSystem;
+    int poloz = (int)(Math.random()*4);
 
-    Model maze = loader.loadModel(Gdx.files.internal("Maze.obj"));
+    Model maze = loader.loadModel(Gdx.files.internal("labirinettt.obj"));
+    Model mazeBackGround = loader.loadModel(Gdx.files.internal("PlaneBackGround4.obj"));
     Model modelBackGround = loader.loadModel(Gdx.files.internal("SphereBackGround.obj"));
 
     private void setDebug(){
@@ -56,13 +59,14 @@ public class GameWorld {
 
     private void initEnvironment() {
         environment = new Environment();
-        environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.3f, 0.3f, 0.3f, 1.f));
+        environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.3f, 0.3f, 0.3f, 2.f));
         environment.add(new DirectionalLight().set(0.8f, 0.8f, 0.8f, -1f, -0.8f, -0.2f));
     }
 
     private void initPersCamera() {
         perspectiveCamera = new PerspectiveCamera(FOV, Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-        perspectiveCamera.position.set(12f,20f,0f);
+        perspectiveCamera.position.set(0f,30f,0f);
+        perspectiveCamera.rotate(90,0,2,0);
         perspectiveCamera.lookAt(0f,0f,0f);
         perspectiveCamera.near =0.1f;
         perspectiveCamera.far =300f;
@@ -77,10 +81,15 @@ public class GameWorld {
 
     private void addEntities() {
         createGround();
+        createPlaneBackGround();
+        if(poloz==0)
         createPlayer(6.75f, 1.3f, 6.75f);
-        //createPlayer(-6.75f, 1.3f, 6.75f);
-        //createPlayer(6.75f, 1.3f, -6.75f);
-        //createPlayer(-6.75f, 1.3f, -6.75f);
+        else if(poloz==1)
+        createPlayer(-6.75f, 1.3f, 6.75f);
+        else if(poloz==2)
+        createPlayer(6.75f, 1.3f, -6.75f);
+        else if(poloz==3)
+        createPlayer(-6.75f, 1.3f, -6.75f);
         createBackGround();
 
     }
@@ -90,10 +99,13 @@ public class GameWorld {
         engine.addEntity(character);
     }
 
+
     private void createGround() {
         engine.addEntity(EntityFactory.createStaticEntity(maze,0,0,0));
     }
-
+    private void createPlaneBackGround() {
+        engine.addEntity(EntityFactory.createStaticEntity(mazeBackGround,0,-30,0));
+    }
     private void createBackGround(){
         engine.addEntity(EntityFactory.createBackGround(modelBackGround,0,0,0));
     }

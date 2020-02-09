@@ -58,9 +58,9 @@ public class PlayerSystem extends EntitySystem implements EntityListener {
         if (Gdx.input.isKeyPressed(Input.Keys.D)) tmp.set(camera.direction).crs(camera.up).scl(0.1f);
 
         float degX = Gdx.input.getAccelerometerX()/100;
-        float degZ = -Gdx.input.getAccelerometerZ()/100;
+        float degY = Gdx.input.getAccelerometerY()/100;
 
-        tmp.set(degZ, 0, degX);//Comment only this lina and move with keyboards
+        tmp.set(degY, 0, degX);//Comment only this lina and move with keyboards
 
 
         //characterComponent.walkDirection.add(tmp);
@@ -83,7 +83,7 @@ public class PlayerSystem extends EntitySystem implements EntityListener {
     }
 
     private void checkGameWin() {
-        if (Math.abs(translation.x)<1 && Math.abs(translation.y)<1) {
+        if (Math.abs(translation.x)<1 && Math.abs(translation.z)<1) {
             winScreen.gameWin();
         }
     }

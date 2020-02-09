@@ -6,45 +6,45 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="9"
-8-->C:\GitHub\MazeGame\android\AndroidManifest.xml
+8-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->C:\GitHub\MazeGame\android\AndroidManifest.xml
+9-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml
 10
 11    <application
-11-->C:\GitHub\MazeGame\android\AndroidManifest.xml:5:5-22:19
+11-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:5:5-22:19
 12        android:allowBackup="true"
-12-->C:\GitHub\MazeGame\android\AndroidManifest.xml:6:9-35
+12-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:6:9-35
 13        android:appCategory="game"
-13-->C:\GitHub\MazeGame\android\AndroidManifest.xml:9:9-35
+13-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:9:9-35
 14        android:debuggable="true"
 15        android:icon="@drawable/ic_launcher"
-15-->C:\GitHub\MazeGame\android\AndroidManifest.xml:7:9-45
+15-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:7:9-45
 16        android:isGame="true"
-16-->C:\GitHub\MazeGame\android\AndroidManifest.xml:8:9-30
+16-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:8:9-30
 17        android:label="@string/app_name"
-17-->C:\GitHub\MazeGame\android\AndroidManifest.xml:10:9-41
+17-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:10:9-41
 18        android:testOnly="true"
 19        android:theme="@style/GdxTheme" >
-19-->C:\GitHub\MazeGame\android\AndroidManifest.xml:11:9-40
+19-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:11:9-40
 20        <activity
-20-->C:\GitHub\MazeGame\android\AndroidManifest.xml:12:9-21:20
+20-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:12:9-21:20
 21            android:name="com.mygdx.game.AndroidLauncher"
-21-->C:\GitHub\MazeGame\android\AndroidManifest.xml:13:13-58
+21-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:13:13-58
 22            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout"
-22-->C:\GitHub\MazeGame\android\AndroidManifest.xml:16:13-107
+22-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:16:13-107
 23            android:label="@string/app_name"
-23-->C:\GitHub\MazeGame\android\AndroidManifest.xml:14:13-45
+23-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:14:13-45
 24            android:screenOrientation="portrait" >
-24-->C:\GitHub\MazeGame\android\AndroidManifest.xml:15:13-49
+24-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:15:13-49
 25            <intent-filter>
-25-->C:\GitHub\MazeGame\android\AndroidManifest.xml:17:13-20:29
+25-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:17:13-20:29
 26                <action android:name="android.intent.action.MAIN" />
-26-->C:\GitHub\MazeGame\android\AndroidManifest.xml:18:17-69
-26-->C:\GitHub\MazeGame\android\AndroidManifest.xml:18:25-66
+26-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:18:17-69
+26-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:18:25-66
 27
 28                <category android:name="android.intent.category.LAUNCHER" />
-28-->C:\GitHub\MazeGame\android\AndroidManifest.xml:19:17-77
-28-->C:\GitHub\MazeGame\android\AndroidManifest.xml:19:27-74
+28-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:19:17-77
+28-->C:\Users\leone\Creator_com\MazeGame\android\AndroidManifest.xml:19:27-74
 29            </intent-filter>
 30        </activity>
 31    </application>
