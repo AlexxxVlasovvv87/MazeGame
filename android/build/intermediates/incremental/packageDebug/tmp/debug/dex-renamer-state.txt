@@ -1,4 +1,4 @@
-#Sat Feb 08 18:59:22 MSK 2020
+#Mon Feb 10 10:40:59 MSK 2020
 base.0=C\:\\Users\\leone\\Creator_com\\MazeGame\\android\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
