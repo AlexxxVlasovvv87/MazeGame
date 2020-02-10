@@ -3,14 +3,17 @@ package com.mygdx.game.Screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.mygdx.game.Maze;
 
 public class WinScreen extends Actor{
     public Stage stage;
     private Maze game;
+    private Image restartButton;
     Image[] backgroundImage = new Image[50];
     int variant = (int)(Math.random()*50);
 
@@ -19,6 +22,7 @@ public class WinScreen extends Actor{
         stage = new Stage(new FillViewport(Maze.VIRTUAL_WIDTH, Maze.VIRTUAL_HEIGHT));
         setWidgets();
         configureWidgets();
+        setListener();
     }
 
     private void setWidgets() {
@@ -72,12 +76,28 @@ public class WinScreen extends Actor{
         backgroundImage[47] = new Image(new Texture(Gdx.files.internal("Win48.png")));
         backgroundImage[48] = new Image(new Texture(Gdx.files.internal("Win49.png")));
         backgroundImage[49] = new Image(new Texture(Gdx.files.internal("Win50.png")));
+
+        restartButton = new Image (new Texture(Gdx.files.internal("restart.png")));
     }
 
     public void configureWidgets() {
         setSize(450, 450);
         setPosition(Maze.VIRTUAL_WIDTH / 2 - backgroundImage[variant].getWidth() / 2, Maze.VIRTUAL_HEIGHT / 2-250);
+
+        restartButton.setSize(200,200);
+        restartButton.setPosition(Maze.VIRTUAL_WIDTH - restartButton.getWidth()-20, Maze.VIRTUAL_HEIGHT -220);
+
+        stage.addActor(restartButton);
     }
+
+        private void setListener() {
+            restartButton.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    game.setScreen(new GameScreen(game));
+                }
+            });
+        }
 
     @Override
     public void setPosition(float x, float y) {
